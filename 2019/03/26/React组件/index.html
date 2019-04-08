@@ -66,7 +66,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="React,">
 
 
 
@@ -77,17 +77,23 @@
 
 
 
-<meta name="description" content="Welcome to my silly life">
-<meta name="keywords" content="struggle">
-<meta property="og:type" content="website">
-<meta property="og:title" content="A Great Song">
-<meta property="og:url" content="http://sung.com/index.html">
+<meta name="description" content="依据文档版本：v16.8.6 总结和记录在写React Component时，比较实用的几个React Top Level API。 1. React.Compoent  123456789101112// Componentclass CFC extends React.Component &amp;#123;  const &amp;#123; content &amp;#125; = this.props;  co">
+<meta name="keywords" content="React">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React组件和React Top-Level API">
+<meta property="og:url" content="http://sung.com/2019/03/26/React组件/index.html">
 <meta property="og:site_name" content="A Great Song">
-<meta property="og:description" content="Welcome to my silly life">
+<meta property="og:description" content="依据文档版本：v16.8.6 总结和记录在写React Component时，比较实用的几个React Top Level API。 1. React.Compoent  123456789101112// Componentclass CFC extends React.Component &amp;#123;  const &amp;#123; content &amp;#125; = this.props;  co">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="https://github.com/SycamoreYC/markdownImages/raw/master/React%E7%BB%84%E4%BB%B6/beforechange.jpg">
+<meta property="og:image" content="https://github.com/SycamoreYC/markdownImages/raw/master/React%E7%BB%84%E4%BB%B6/afterchange.jpg">
+<meta property="og:image" content="https://github.com/SycamoreYC/markdownImages/raw/master/React%E7%BB%84%E4%BB%B6/cloneElement.png">
+<meta property="og:image" content="https://github.com/SycamoreYC/markdownImages/raw/master/React%E7%BB%84%E4%BB%B6/fragment.png">
+<meta property="og:updated_time" content="2019-04-08T10:40:02.937Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="A Great Song">
-<meta name="twitter:description" content="Welcome to my silly life">
+<meta name="twitter:title" content="React组件和React Top-Level API">
+<meta name="twitter:description" content="依据文档版本：v16.8.6 总结和记录在写React Component时，比较实用的几个React Top Level API。 1. React.Compoent  123456789101112// Componentclass CFC extends React.Component &amp;#123;  const &amp;#123; content &amp;#125; = this.props;  co">
+<meta name="twitter:image" content="https://github.com/SycamoreYC/markdownImages/raw/master/React%E7%BB%84%E4%BB%B6/beforechange.jpg">
 
 
 
@@ -117,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://sung.com/">
+  <link rel="canonical" href="http://sung.com/2019/03/26/React组件/">
 
 
 
 
 
-  <title>A Great Song</title>
+  <title>React组件和React Top-Level API | A Great Song</title>
   
 
 
@@ -142,8 +148,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -226,9 +231,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -258,9 +263,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/26/React组件/" itemprop="url">React组件和React Top-Level API</a></h1>
+          <h1 class="post-title" itemprop="name headline">React组件和React Top-Level API</h1>
         
 
         <div class="post-meta">
@@ -310,9 +313,7 @@
       
 
       
-        
-          
-            <p>依据文档版本：<a href="https://reactjs.org/docs/react-api.html" target="_blank" rel="noopener">v16.8.6</a></p>
+        <p>依据文档版本：<a href="https://reactjs.org/docs/react-api.html" target="_blank" rel="noopener">v16.8.6</a></p>
 <p>总结和记录在写React Component时，比较实用的几个React Top Level API。</p>
 <h4 id="1-React-Compoent"><a href="#1-React-Compoent" class="headerlink" title="1. React.Compoent"></a>1. React.Compoent</h4>  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Component</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CFC</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> &#123; content &#125; = <span class="keyword">this</span>.props;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'render component'</span>);</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div style=&#123;style&#125;&gt;</span><br><span class="line">        This is a &#123; content &#125;</span><br><span class="line">      &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    )</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
 <h4 id="2-React-PureComponent"><a href="#2-React-PureComponent" class="headerlink" title="2. React.PureComponent"></a>2. React.PureComponent</h4>  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// PureComponent</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PureC</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">PureComponent</span> </span>&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; content &#125; = <span class="keyword">this</span>.props;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'render purecomponent'</span>)</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div style=&#123;style&#125;&gt;</span><br><span class="line">        This is a &#123; content &#125;</span><br><span class="line">      &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    )</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
@@ -338,8 +339,6 @@
 <p><img src="https://github.com/SycamoreYC/markdownImages/raw/master/React%E7%BB%84%E4%BB%B6/fragment.png" alt="React.Fragment"></p>
 <p>可以看到上图中，每一组<code>&lt;dt&gt;&lt;dd&gt;</code>外面并没有一个包裹它们的节点。方便起见，写代码的时候可以使用这个语法<code>&lt;&gt;&lt;/&gt;</code>代替<code>React.Fragment</code>。<br>需要注意的是，<code>React.Fragment</code>只能有<code>key</code>属性，其他属性是不能传给它的。同时，<code>&lt;&gt;&lt;/&gt;</code>是不能接受任何属性的，即使是<code>key</code>也不行❌。</p>
 
-          
-        
       
     </div>
     
@@ -354,262 +353,36 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://sung.com/2019/03/26/test-1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yechun.song">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/my_avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="A Great Song">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/26/test-1/" itemprop="url">test 1</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-26T17:48:22+08:00">
-                2019-03-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-
+            <a href="/tags/React/" rel="tag"># React</a>
           
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>this is a second try actually</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
       
 
       
       
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
       
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://sung.com/2019/03/26/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yechun.song">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/my_avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="A Great Song">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/26/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-26T17:27:51+08:00">
-                2019-03-26
-              </time>
+              <a href="/2019/03/26/test-1/" rel="next" title="test 1">
+                <i class="fa fa-chevron-left"></i> test 1
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server llllll</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -619,10 +392,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -630,6 +404,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -664,8 +442,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -728,6 +515,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-React-Compoent"><span class="nav-number">1.</span> <span class="nav-text">1. React.Compoent</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-React-PureComponent"><span class="nav-number">2.</span> <span class="nav-text">2. React.PureComponent</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-React-memo"><span class="nav-number">3.</span> <span class="nav-text">3. React.memo</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-React-cloneElement-VS-React-Children"><span class="nav-number">4.</span> <span class="nav-text">4. React.cloneElement VS React.Children</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-React-Fragment"><span class="nav-number">5.</span> <span class="nav-text">5. React.Fragment</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -862,6 +665,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
