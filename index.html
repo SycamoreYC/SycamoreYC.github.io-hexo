@@ -241,7 +241,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://sung.com/2019/03/26/React组件/">
+    <link itemprop="mainEntityOfPage" href="http://sung.com/2019/03/26/test-1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yechun.song">
@@ -260,7 +260,127 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/26/React组件/" itemprop="url">React组件和React Top-Level API</a></h1>
+                <a class="post-title-link" href="/2019/03/26/test-1/" itemprop="url">test 1</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-26T17:48:22+08:00">
+                2019-03-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>this is a second try actually</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://sung.com/2019/03/26/React组件和React Top-Level API/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yechun.song">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/my_avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="A Great Song">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/26/React组件和React Top-Level API/" itemprop="url">React组件和React Top-Level API</a></h1>
         
 
         <div class="post-meta">
@@ -337,126 +457,6 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// component</span></span><br><span class="line"><span class="keyword">const</span> Fragment = React.Fragment;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FragmentC</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">const</span> array = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;dl&gt;</span><br><span class="line">        &#123; array.map(item =&gt;</span><br><span class="line">            &lt;Fragment key=&#123;item&#125;&gt;</span><br><span class="line">              &lt;dt&gt;Fragment&lt;/dt&gt;&lt;dd&gt;&#123;item&#125;&lt;/dd&gt;</span><br><span class="line">            &lt;/Fragment&gt;</span><br><span class="line">        )&#125;</span><br><span class="line">      &lt;/dl&gt;</span><br><span class="line">    </span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// use</span></span><br><span class="line">&lt;FragmentC /&gt;</span><br></pre></td></tr></table></figure>
 <p><img src="https://github.com/SycamoreYC/markdownImages/raw/master/React%E7%BB%84%E4%BB%B6/fragment.png" alt="React.Fragment"></p>
 <p>可以看到上图中，每一组<code>&lt;dt&gt;&lt;dd&gt;</code>外面并没有一个包裹它们的节点。方便起见，写代码的时候可以使用这个语法<code>&lt;&gt;&lt;/&gt;</code>代替<code>React.Fragment</code>。<br>需要注意的是，<code>React.Fragment</code>只能有<code>key</code>属性，其他属性是不能传给它的。同时，<code>&lt;&gt;&lt;/&gt;</code>是不能接受任何属性的，即使是<code>key</code>也不行❌。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://sung.com/2019/03/26/test-1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yechun.song">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/my_avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="A Great Song">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/26/test-1/" itemprop="url">test 1</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-26T17:48:22+08:00">
-                2019-03-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>this is a second try actually</p>
 
           
         
